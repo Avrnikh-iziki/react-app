@@ -30,11 +30,7 @@
     height: 120px;
 }
 
-.right .map-text {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+
 
 .right {
     flex: .8;
@@ -42,6 +38,14 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+   
+}
+
+.right .map-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
 
 .map-text .text {
@@ -52,16 +56,15 @@
     height: 300px;
     border-radius: 10px;
     box-shadow: -1px 1px 30px -12px var(--color-bg);
-    
     color: var(--color-bg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    overflow-y: hidden
+   
 
 }
 
-.map-text .text p{
+.map-text .text span {
     background-color: rgba(34, 123, 168, 0.8);
     color: white;
     border-radius: 10px;
@@ -69,7 +72,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
+.map-text .text span p {
+    height: 90%;
+    width: 95%;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    
+}
+
 .leaflet-container {
     width: 100%;
     height: 300px;
@@ -91,9 +104,6 @@
     justify-content: center;
     font-size: 18px;
     margin-bottom: 10px;
-
-
-
 }
 
 .right .buttom a {
@@ -127,6 +137,7 @@
     margin-bottom: 5px;
     opacity: .8;
     font-style: italic;
+    font-size: 10px;
 
 }
 
@@ -150,8 +161,9 @@
         flex-direction: column;
     }
 
-    .map-text .text p {
+    .map-text .text span p {
         padding: 30px 10px;
+        font-size: 13px;
     }
 
 }

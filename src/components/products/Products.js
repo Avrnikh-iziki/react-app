@@ -49,9 +49,7 @@ function Products({ setTotalPages, page }) {
                                 <div className='title gradient__text '>{el.name}</div>
                                 <div className='description'>{el.description.substring(0, 320)}</div>
                                 <div className='reflexionSection'>
-                                    <div className='buy'>
-                                        <button onClick={handleAddItem(el)}>ADD TO CART</button>
-                                    </div>
+                                    <div  className='button' onClick={handleAddItem(el)}>ADD TO CART</div>
                                     <div className='homeprice'><p> {el.price} $ </p></div>
                                 </div>
                             </div>

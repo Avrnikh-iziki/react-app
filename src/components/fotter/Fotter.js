@@ -27,9 +27,12 @@ const Fotter = () => {
                 <div className='right'>
                     <div className='map-text'>
                         <div className='text' style={{ backgroundImage: `url(/map.jpg)` }}>
-                            <p>
-                                Avrnikh was started with the mission to provide “Economic as well as Efficient” software solutions. We firmly believe in the credibility and scalability of Digital Transformation. Our services are focused on Mobility Solutions, Custom App Development , Web App Development, Cloud Solutions, Artificial Intelligence & Machine Learning, Predictive Analytics & Big Data Solutions, and several other trending as well as emerging technologies. At its core, Avrnikh is all about developing solutions which help clients accelerate their business processes, achieve optimum productivity, and mitigate risks.
-                            </p>
+                            <span>
+                                <p>
+                                    Avrnikh was started with the mission to provide “Economic as well as Efficient” software solutions. We firmly believe in the credibility and scalability of Digital Transformation. Our services are focused on Mobility Solutions, Custom App Development , Web App Development, Cloud Solutions, Artificial Intelligence & Machine Learning, Predictive Analytics & Big Data Solutions, and several other trending as well as emerging technologies. At its core, Avrnikh is all about developing solutions which help clients accelerate their business processes, achieve optimum productivity, and mitigate risks.
+                                </p>
+                            </span>
+
                         </div>
                         <div className='map'>
                             <Leaflet />

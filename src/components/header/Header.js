@@ -5,13 +5,13 @@ import './header.css';
 
 const Header = () => {
 
-  return (
+  return ( 
     <>
       <div className="header-cont" >
         <div className="header-left">
           <div className='header-title'>
-            <h1>Imade iziki</h1>
-            <h1>Imade iziki</h1>
+            <h1>Imade iziki Store</h1>
+            <h1>Imade iziki Store</h1>
           </div>
           <p>
           Avrnikh was started with the mission to provide Economic as well as Efficient software solutions. We firmly believe in the credibility and scalability of Digital Transformation.
