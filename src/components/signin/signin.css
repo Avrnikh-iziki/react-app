@@ -1,0 +1,74 @@
+.signin{
+    min-height: 55vh !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.signin form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 300px;
+}
+
+
+.signin form input {
+    border: none;
+    height: 20px;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 5px 2px 17px #FF4820;
+}
+
+.registration{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 250px;
+    margin-top: 10px;
+}
+
+.registration button{
+    padding: 4px 15px ;
+    border-radius: 3px ;
+    color: white;
+    background-color: #FF4820;
+    border: 1px solid #FF4820;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+
+.registration button:hover{
+    background-color: transparent;
+    border: 1px solid #FF4820;
+    transform: scale(1.1);
+    transition: all .5s ease-in-out;
+}
+
+.registration div {
+    padding: 4px 15px ;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    border: 1px solid #FF4820;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.registration div:hover{
+    background-color: #FF4820;
+    transform: scale(0.9);
+    transition: all .5s ease-in-out;
+}
+.registration div span {
+    margin-left: 5px ;
+    font-size: 12px;
+}

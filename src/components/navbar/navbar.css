@@ -1,0 +1,126 @@
+.navbar {
+    width: 100%;
+    height: 200px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    position: relative;
+
+}
+
+.logo {
+    flex: .2;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 4;
+}
+
+.nav-lin {
+    flex: .7;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 16px;
+    z-index: 3;
+    color: rgb(10, 238, 51);
+    
+}
+
+.nav-lin .list {
+    margin: 1px 5px;
+    width: 35px;
+    height: 35px;
+    background-color: var(--color-bg);
+    border-radius: 50%;
+    border: 2px solid white;
+    position: relative;
+    font-size: 14px;
+}
+
+.nav-lin .list:hover{
+    transform: scale(1.1);
+    transition: all 1s ease-in-out;
+    color: #ff4820;
+}
+
+.nav-lin .list .links {
+    width: 99%;
+    height: 99%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nav-lin .list span {
+    border-radius: 50%;
+    color: var(--color-bg);
+    position: absolute;
+    right: -10px;
+    top: -12px;
+    width: 19px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bolder;
+    background-color: white;
+    padding: 8px;
+    border: 1px solid rgb(10, 238, 51);
+
+}
+
+.lin-act {
+    color: var(--color-bg);
+    border: 2px solid rgb(10, 238, 51) !important;
+    background-color: white !important;
+    transition: all 1s ease-out;
+}
+
+.custom-shape {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(0deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.custom-shape svg {
+    width: calc(102% + 1.3px);
+    height: 279px;
+    transform: rotateY(0deg);
+}
+
+.custom-shape .shape-fill {
+    fill: rgba(255, 72, 32, .7);
+}
+
+@media (max-width: 550px) {
+
+    .nav-lin .list {
+        width: 29px;
+        height: 29px;
+        font-size: 13px;
+    }
+
+    .logo img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .custom-shape svg {
+        height: 220px;
+    }
+}

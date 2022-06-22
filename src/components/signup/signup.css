@@ -1,0 +1,67 @@
+.signup{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signin form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 300px;
+    padding: 30px 5px;
+}
+
+.signin form input {
+    border: none;
+    height: 22px !important;
+    margin-bottom: 10px;
+    width: 250px;
+    text-align: center;
+    border: 1px  solid #FF4820  !important;
+    border-radius: 10px;
+    box-shadow: 5px 2px 17px #FF4820;
+    color: #FF4820;
+    font-weight: bold;
+}
+::placeholder {
+    color:var(--color-bg);
+    opacity: .4;
+}
+
+
+.signin form button {
+    padding: 4px 15px ;
+    border-radius: 3px;
+    color: white;
+    background-color: #FF4820;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #FF4820;
+
+}
+
+.signin form button:hover{
+    background-color: transparent;
+    border: 1px solid #FF4820;
+    transform: scale(1.1);
+    transition: all .5s ease-in-out;
+}
+.signupRegistration{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 250px;
+}
+.signupRegistration span {
+color: #FF4820;
+font-size: 15px;
+}
+.signupRegistration span:hover{
+    transform: scal(1.1);
+    color: white;
+    border-radius:50% ;
+    transition: all 1s ease-in-out;
+}
+ 

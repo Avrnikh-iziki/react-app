@@ -1,0 +1,157 @@
+.container {
+    min-height: 250px;
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: warp;
+
+    position: relative;
+}
+
+
+.cont {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 20px;
+    background-color: rgba(255, 72, 32, .8);
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: .3;
+    margin-bottom: 100px;
+}
+
+.left img {
+    width: 120px;
+    height: 120px;
+}
+
+.right .map-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.right {
+    flex: .8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.map-text .text {
+    flex: .48;
+    font-style: italic;
+    margin-bottom: 10px;
+    text-align: center;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: -1px 1px 30px -12px var(--color-bg);
+    
+    color: var(--color-bg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow-y: hidden
+
+}
+
+.map-text .text p{
+    background-color: rgba(34, 123, 168, 0.8);
+    color: white;
+    border-radius: 10px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.leaflet-container {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: -1px 1px 30px -12px var(--color-bg);
+}
+
+.map-text .map {
+    flex: .5;
+    width: 100%;
+    height: 300px;
+    margin: 15px 0;
+
+}
+
+.right .buttom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+
+
+
+}
+
+.right .buttom a {
+    margin: 5px 5px;
+    border-radius: 50%;
+    padding: 7px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: var(--color-bg);
+    border: 1px solid white;
+    box-shadow: -1px 1px 30px -12px var(--color-bg);
+}
+
+.right .buttom a:hover {
+    transition: all 1s ease-in-out;
+    background-color: var(--color-bg);
+    color: white;
+    transform: scale(0.9);
+}
+
+.right .nomination {
+    width: 100%;
+    text-align: center;
+    letter-spacing: 3px;
+    padding: 5px;
+    height: 30px;
+    margin-bottom: 5px;
+    opacity: .8;
+    font-style: italic;
+
+}
+
+@media (max-width: 1000px) {
+    .cont {
+        flex-direction: column;
+    }
+
+    .left img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .left {
+        margin: 20px 0px;
+    }
+}
+
+@media(max-width:700px) {
+    .map-text {
+        flex-direction: column;
+    }
+
+    .map-text .text p {
+        padding: 30px 10px;
+    }
+
+}

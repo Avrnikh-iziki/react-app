@@ -1,0 +1,111 @@
+.header-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.header-left {
+    flex: .5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.header-title {
+    position: relative;
+    width: 80%;
+    height: 70px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.header-left .header-title h1 {
+    position: absolute;
+    font-family: 'Dancing Script';
+    font-size: 3rem;
+}
+
+.header-left .header-title h1:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px #FF4820;
+}
+
+.header-left .header-title h1:nth-child(2) {
+    animation: animate 4s ease-in-out infinite;
+    color: var(--color-bg);
+
+}
+
+@keyframes animate {
+
+    0%,
+    100% {
+        clip-path: polygon(0 53%, 9% 69%, 30% 70%, 44% 64%, 54% 49%, 71% 40%, 87% 44%, 99% 53%, 100% 100%, 2% 98%);
+    }
+
+    50% {
+        clip-path: polygon(0 70%, 6% 53%, 20% 45%, 39% 51%, 53% 65%, 72% 70%, 94% 66%, 99% 53%, 100% 100%, 2% 98%);
+    }
+
+}
+
+.header-left p {
+    font-family: 'Dancing Script';
+    font-size: 22px;
+    line-height: 25px;
+    color: var(--color-text);
+    margin-top: 1.5rem;
+}
+
+.header-right {
+    flex: .4;
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px;
+}
+
+.header-right img {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width:800px) {
+    .header-cont {
+        flex-direction: column;
+    }
+
+    .header-right img {
+        width: 80%;
+        height: 80%;
+    }
+    .header-left .header-title h1{
+        font-size: 2rem;
+    }
+}
+
+.separtion {
+    width: 100%;
+    height: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0px;
+
+}
+
+.separtion span {
+    width: 70%;
+    height: 1px;
+    background-color:#FF4820;
+
+}
