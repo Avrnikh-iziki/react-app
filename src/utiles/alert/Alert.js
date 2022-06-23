@@ -3,15 +3,13 @@ import { logout, reset } from '../../redux/slice'
 import { useDispatch } from 'react-redux'
 import './alert.css'
 
-
-
-const Alert = ({ setresponse, response, admin = false }) => {
+const Alert = ({ setresponse, response }) => {
     const dispatch = useDispatch()
     useEffect(() => {
         setTimeout(() => {
             setresponse({ ...response, isExist: false })
-            if (admin) window.location = '/'
-            if (response?.action === 'login') {
+         
+            if (response.action === 'login') {
                 window.location = '/signin'
                 dispatch(logout())
             }

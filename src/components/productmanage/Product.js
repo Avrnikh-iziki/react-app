@@ -60,19 +60,19 @@ const Product = ({ setTotalPages, page , setswitsh , setitem}) => {
     return (
         <>
             {response.isExist && <Alert setresponse={setresponse} response={response} />}
-            <div className='con'>
+            <div className='manage-con'>
                 {
                     products.map((el, index) => (
-                        <div className="card" key={index}>
-                            <div className='card_image' style={{
+                        <div className="manage-card" key={index}>
+                            <div className='manage-card_image' style={{
                                 backgroundImage: `url(${el.image})`
                             }}>
                             </div>
-                            <div className='details'>
-                                <div className='title gradient__text '>{el.name}</div>
-                                <div className='description'>{el.description.substring(0, 120)}...</div>
-                                <div className='reflexionSection'>
-                                    <div className='buy'>
+                            <div className='manage-details'>
+                                <div className='manage-title gradient__text '>{el.name}</div>
+                                <div className='manage-description'>{el.description.substring(0, 120)}...</div>
+                                <div className='manage-reflexionSection'>
+                                    <div className='manage-buy'>
                                         <div onClick={handlDelete(el)}>
                                             <FontAwesomeIcon icon={faTrash} />
                                         </div>
@@ -80,7 +80,7 @@ const Product = ({ setTotalPages, page , setswitsh , setitem}) => {
                                             <FontAwesomeIcon icon={faPenToSquare} />
                                         </div>
                                     </div>
-                                    <div className='homeprice'><p> {el.price} $ </p></div>
+                                    <div className='manage-homeprice'><p> {el.price} $ </p></div>
                                 </div>
                             </div>
                         </div>
