@@ -3,7 +3,7 @@ import Leaflet from '../leaflet/Leaflet'
 import './fotter.css'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFacebook, faTwitter, faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons"
+import { faFacebookF, faTwitter, faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons"
 
 const Fotter = () => {
     return (
@@ -39,7 +39,7 @@ const Fotter = () => {
                         </div>
                     </div>
                     <div className='buttom'>
-                        <a href="https://www.w3schools.com" rel="noreferrer" target="_blank" > <FontAwesomeIcon icon={faFacebook} /></a>
+                        <a href="https://www.w3schools.com" rel="noreferrer" target="_blank" > <FontAwesomeIcon icon={faFacebookF} /></a>
                         <a href="https://www.w3schools.com" rel="noreferrer" target="_blank"><FontAwesomeIcon icon={faTwitter} /></a>
                         <a href="https://www.w3schools.com" rel="noreferrer" target="_blank"><FontAwesomeIcon icon={faInstagram} /></a>
                         <a href="https://www.w3schools.com" rel="noreferrer" target="_blank"><FontAwesomeIcon icon={faTiktok} /></a>

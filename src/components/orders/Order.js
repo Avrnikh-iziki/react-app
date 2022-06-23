@@ -2,9 +2,9 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faCheck } from '@fortawesome/free-solid-svg-icons'
 import { useSelector, useDispatch } from 'react-redux'
-import { logout } from '../../redux/slice'
-import './order.css'
 import Alert from '../../utiles/alert/Alert'
+import './order.css'
+
 
 const Order = () => {
 
@@ -12,8 +12,7 @@ const Order = () => {
     const access = useSelector((state) => state.user.access)
     const [orders, setorders] = useState([])
     const [allorders, setallorders] = useState(-1)
-    const [response, setresponse] = useState({ type: "", message: "", isExist: false , action:null })
-
+    const [response, setresponse] = useState({ type: "", message: "", isExist: false, action: null })
 
     const handlchek = useCallback(
         (product) => async () => {
@@ -28,11 +27,11 @@ const Order = () => {
                         body: JSON.stringify(product)
                     })
                     if (data.status === 200) window.location.reload(true)
-                    else setresponse({ type: "error", message: "failed to archive order , please login and  try again!!", isExist: true , action:"login" })
+                    else setresponse({ type: "error", message: "failed to archive order , please login and  try again!!", isExist: true, action: "login" })
                 }
                 products()
             } catch (err) {
-                setresponse({ type: "error", message: "failed to archive order , please login and  try again!!", isExist: true, action:"login" })
+                setresponse({ type: "error", message: "failed to archive order , please login and  try again!!", isExist: true, action: "login" })
             }
         }
         , [access])
@@ -50,14 +49,15 @@ const Order = () => {
                     })
 
                     if (data.status === 204) window.location.reload(true)
-                    else setresponse({ type: "error", message: "failed to delete order , please  login and try again!!", isExist: true, action:"login" })
+                    else setresponse({ type: "error", message: "failed to delete order , please  login and try again!!", isExist: true, action: "login" })
                 }
                 products()
             } catch (err) {
-                setresponse({ type: "error", message: "failed to delete order , please  login and try again!!", isExist: true , action:"login"})
+                setresponse({ type: "error", message: "failed to delete order , please  login and try again!!", isExist: true, action: "login" })
             }
         }
         , [access])
+
 
     useEffect(() => {
         try {
@@ -70,24 +70,27 @@ const Order = () => {
                     },
                 })
                 const { order } = await data.json()
-                setallorders(order?.length)
-                setorders(order)
-                if (data.status === 401) {
-                    dispatch(logout())
-                    window.location = '/signin'
+
+                if (data.status === 200) {
+                    setallorders(order?.length)
+                    setorders(order)
+                } else {
+                    setresponse({ type: "error", message: "faild to load data , please login", isExist: true, action: "login" })
                 }
             }
 
             products()
         } catch (err) {
-            setresponse({ type: "error", message: "faild to load data , please login", isExist: true, admin: true ,  action:"login"})
+            setresponse({ type: "error", message: "faild to load data , please login", isExist: true, action: "login" })
         }
-    }, [access, dispatch])
+    }, [access, dispatch, response])
 
     return (
-        <>
-            {allorders > 0
-                ? <div className='product_container'>
+        <div className='order-con'>
+            {response.isExist && <Alert setresponse={setresponse} response={response} />}
+            {
+                allorders > 0 &&
+                <div className='product_container'>
                     <div className='order_title'> <p>your orders {allorders > 0 && <span>{allorders}</span>}</p></div>
                     {response.isExist && <Alert setresponse={setresponse} response={response} />}
 
@@ -133,11 +136,14 @@ const Order = () => {
                         })
                     }
                 </div>
-                : <div className='product_container empty_order'>
+            }
+
+            {allorders === 0 &&
+                <div className='product_container empty_order'>
                     you don't have any orders
                 </div>
             }
-        </>
+        </div>
     )
 }
 

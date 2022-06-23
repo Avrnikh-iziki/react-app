@@ -13,6 +13,7 @@ const Navbar = ({ totaleItems }) => {
   const isAuth = useSelector((state) => state.user.isAuth)
   const currentPath = location.pathname
   const [active, setacive] = useState(currentPath)
+
   const handlelogout = () => {
     dispatch(logout())
     setacive('/signin')
@@ -37,15 +38,28 @@ const Navbar = ({ totaleItems }) => {
             </Link>
           </div>
 
-          <div
-            className={active === "/signin" ? "lin-act list" : "list"}>
-            <Link
-              to={"/signin"}
-              onClick={handlelogout}
-              className="links" >
-              <FontAwesomeIcon icon={isAuth ? faSignOutAlt : faUser} />
-            </Link>
-          </div>
+          {isAuth &&
+            <div
+              className= "list">
+              <Link
+                to={"/"}
+                onClick={handlelogout}
+                className="links" >
+                <FontAwesomeIcon icon={faSignOutAlt} />
+              </Link>
+            </div>
+          }
+          {!isAuth &&
+            <div
+              className={active === "/signin" ? "lin-act list" : "list"}>
+              <Link
+                to={"/signin"}
+                onClick={handlelogout}
+                className="links" >
+                <FontAwesomeIcon icon={faUser} />
+              </Link>
+            </div>
+          }
 
           <div
             className={active === "/cart" ? "lin-act list" : "list"}>

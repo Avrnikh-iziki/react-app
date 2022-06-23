@@ -1,7 +1,6 @@
 import React, { lazy, Suspense, useState } from 'react'
 import Pagination from '../components/pagination/Pagination'
 import LoadingSpinner from '../components/spinner/Spinner'
-//const Header = lazy(() => import('../components/header/Header'))
 import Header from '../components/header/Header'
 const Products = lazy(() => import('../components/products/Products'))
 function Home() {

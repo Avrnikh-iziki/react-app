@@ -52,7 +52,7 @@ const Product = ({ setTotalPages, page , setswitsh , setitem}) => {
             }
             products()
         } catch (err) {
-            alert("faild to load data")
+            setresponse({ type: "error", message: "failed to load data , please login and try again!!", isExist: true, action:"login" })
         }
         window.scrollTo(0, 0)
     }, [page, setTotalPages])
