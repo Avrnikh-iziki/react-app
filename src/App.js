@@ -73,12 +73,12 @@ function App() {
             </ProtectedRoute>}
           />
           <Route path='orders' element={
-            <ProtectedRoute user={isSuperUser} admin={true} >
+            <ProtectedRoute user={isSuperUser}  >
               < Orders />
             </ProtectedRoute>}
           />
           <Route path='products' element={
-            <ProtectedRoute user={isSuperUser} admin={true} >
+            <ProtectedRoute user={isSuperUser} >
               <Productsmanag />
             </ProtectedRoute>}
           />

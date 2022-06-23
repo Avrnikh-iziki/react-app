@@ -19,7 +19,7 @@ const Addproduct = ({ id = '', Name = "", Price = "", Description = "", Image = 
     const [description, setdescription] = useState(Description)
 
     const access = useSelector((state) => state.user.access)
-    const [response, setresponse] = useState({ type: "", message: "", isExist: false })
+    const [response, setresponse] = useState({ type: "", message: "", isExist: false, action: null })
 
 
     const handleimage = (e) => {
@@ -70,11 +70,11 @@ const Addproduct = ({ id = '', Name = "", Price = "", Description = "", Image = 
                     body: JSON.stringify(upload_data)
                 })
                 if (data.status === 201) window.location.reload(true)
-                else setresponse({ type: "error", message: "failed to add new product , please try again!!", isExist: true })
+                else setresponse({ type: "error", message: "failed to add new product , please login", isExist: true, action: 'login' })
             }
             products()
         } catch (err) {
-            setresponse({ type: "error", message: "failed to add new product , please try again!!", isExist: true })
+            setresponse({ type: "error", message: "failed to add new product , please login", isExist: true, action: 'login' })
         }
 
     }

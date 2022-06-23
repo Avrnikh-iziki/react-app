@@ -12,7 +12,7 @@ const Order = () => {
     const access = useSelector((state) => state.user.access)
     const [orders, setorders] = useState([])
     const [allorders, setallorders] = useState(-1)
-    const [response, setresponse] = useState({ type: "", message: "", isExist: false })
+    const [response, setresponse] = useState({ type: "", message: "", isExist: false , action:null })
 
 
     const handlchek = useCallback(
@@ -28,11 +28,11 @@ const Order = () => {
                         body: JSON.stringify(product)
                     })
                     if (data.status === 200) window.location.reload(true)
-                    else setresponse({ type: "error", message: "failed to archive order , please try again!!", isExist: true })
+                    else setresponse({ type: "error", message: "failed to archive order , please login and  try again!!", isExist: true , action:"login" })
                 }
                 products()
             } catch (err) {
-                setresponse({ type: "error", message: "failed to archive order , please try again!!", isExist: true })
+                setresponse({ type: "error", message: "failed to archive order , please login and  try again!!", isExist: true, action:"login" })
             }
         }
         , [access])
@@ -50,11 +50,11 @@ const Order = () => {
                     })
 
                     if (data.status === 204) window.location.reload(true)
-                    else setresponse({ type: "error", message: "failed to delete order , please try again!!", isExist: true })
+                    else setresponse({ type: "error", message: "failed to delete order , please  login and try again!!", isExist: true, action:"login" })
                 }
                 products()
             } catch (err) {
-                setresponse({ type: "error", message: "failed to delete order , please try again!!", isExist: true })
+                setresponse({ type: "error", message: "failed to delete order , please  login and try again!!", isExist: true , action:"login"})
             }
         }
         , [access])
@@ -80,7 +80,7 @@ const Order = () => {
 
             products()
         } catch (err) {
-            setresponse({ type: "error", message: "faild to load data", isExist: true, admin: true })
+            setresponse({ type: "error", message: "faild to load data , please login", isExist: true, admin: true ,  action:"login"})
         }
     }, [access, dispatch])
 

@@ -1,14 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Navigate } from "react-router-dom";
-import Alert from "./alert/Alert";
-const ProtectedRoute = ({ children, user, admin = false }) => {
-    const [response, setresponse] = useState({ type: "error", message: "you are note a admin user", isExist: true })
+
+const ProtectedRoute = ({ children, user}) => {
     if (!user) {
-        if (admin) {
-            return <Alert setresponse={setresponse} response={response} admin={true} />
-        } else {
-            return <Navigate to='/signin' />;
-        }
+        return <Navigate to='/signin' />
     }
     return children
 }

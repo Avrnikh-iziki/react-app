@@ -1,13 +1,24 @@
 import React, { useEffect } from 'react'
-
+import { logout, reset } from '../../redux/slice'
+import { useDispatch } from 'react-redux'
 import './alert.css'
 
-const Alert = ({ setresponse, response , admin =  false }) => {
 
+
+const Alert = ({ setresponse, response, admin = false }) => {
+    const dispatch = useDispatch()
     useEffect(() => {
         setTimeout(() => {
-            setresponse({...response ,isExist: false})
-            if(admin) window.location = '/'
+            setresponse({ ...response, isExist: false })
+            if (admin) window.location = '/'
+            if (response?.action === 'login') {
+                window.location = '/signin'
+                dispatch(logout())
+            }
+            if (response?.action === 'reset') {
+                dispatch(reset())
+                window.location = '/'
+            }
         }, 3000)
     })
     return (

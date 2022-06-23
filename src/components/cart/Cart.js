@@ -1,17 +1,16 @@
 import React, { useCallback, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useSelector, useDispatch } from 'react-redux'
-import { deletteItem, increment, decrement, reset, logout } from '../../redux/slice'
+import { deletteItem, increment, decrement } from '../../redux/slice'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import Alert from '../../utiles/alert/Alert'
-import { Navigate } from 'react-router-dom'
 import './cart.css'
 import '../orders/order.css'
 
 
 const Cart = () => {
 
-    const [response, setresponse] = useState({ type: "", message: "", isExist: false })
+    const [response, setresponse] = useState({ type: "", message: "", isExist: false, action: null })
     const items = useSelector((state) => state.cart.items)
     const totaleItems = useSelector((state) => state.cart.allItems)
     const user = useSelector((state) => state.user.user)
@@ -42,6 +41,7 @@ const Cart = () => {
 
         const { id, ...order } = user
         const list_product = items.map(el => ({ "name": el.name, "price": el.price, "quantity": el.quantity }))
+        
         order["customer_id"] = id
         order["total"] = total
         order["listorder"] = list_product
@@ -55,18 +55,9 @@ const Cart = () => {
         })
 
         if (response.status === 201) {
-            setresponse({ type: "success", message: "your order has been placed successfully!!", isExist: true })
-
-            setTimeout(() => {
-                window.location = '/'
-                dispatch(reset())
-            }, 3000)
+            setresponse({ type: "success", message: "your order has been placed successfully!!", isExist: true, action: "reset" })
         } else {
-            setresponse({ type: "error", message: "faild to depose your order please try again later", isExist: true })
-            setTimeout(() => {
-                Navigate('/signin')
-                dispatch(logout())
-            }, 3000)
+            setresponse({ type: "error", message: "faild to depose your order , please login and try again", isExist: true, action: 'login' })
         }
     }
 

@@ -7,7 +7,7 @@ import Alert from '../../utiles/alert/Alert';
 
 const Product = ({ setTotalPages, page , setswitsh , setitem}) => {
     const [products, setProduct] = useState([])
-    const [response, setresponse] = useState({ type: "", message: "", isExist: false })
+    const [response, setresponse] = useState({ type: "", message: "", isExist: false , action:null })
     const access = useSelector((state) => state.user.access)
 
     const handlUpdate = useCallback(
@@ -30,11 +30,11 @@ const Product = ({ setTotalPages, page , setswitsh , setitem}) => {
                     })
 
                     if (data.status === 204) window.location.reload(true)
-                    else setresponse({ type: "error", message: "failed to delete  product , please try again!!", isExist: true })
+                    else setresponse({ type: "error", message: "failed to delete  product , please login and try again!!", isExist: true , action:"login" })
                 }
                 products()
             } catch (err) {
-                setresponse({ type: "error", message: "failed to delete  product , please try again!!", isExist: true })
+                setresponse({ type: "error", message: "failed to delete  product , please login and try again!!", isExist: true, action:"login" })
             }
         }
         , [access])

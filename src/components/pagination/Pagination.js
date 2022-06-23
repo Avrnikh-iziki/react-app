@@ -33,7 +33,6 @@ function Pagination({ numberOfPages, page, setpage }) {
             setpage(currentpage)
             if (currentpage === incr + index && incr < numberOfPages - index) setincr(incr + 1)
             if (currentpage === incr + 1 && incr > 0) setincr(incr - 1)
-
         }, [incr, numberOfPages, setpage, index]
     )
 
@@ -46,7 +45,7 @@ function Pagination({ numberOfPages, page, setpage }) {
         return () => window.removeEventListener("resize", updateDimensions);
     }, []);
 
-
+ 
     return (
         < div className='pagination'>
             <div className='arraw' onClick={handleLeft}>

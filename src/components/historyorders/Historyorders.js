@@ -6,7 +6,7 @@ import './historyorders.css'
 const Historyorders = ({ setswitsh }) => {
 
     const [orders, setorders] = useState([])
-    const [response, setresponse] = useState({ type: "", message: "", isExist: false })
+    const [response, setresponse] = useState({ type: "", message: "", isExist: false , action:null})
     const user = useSelector((state) => state.user.user)
     const access = useSelector((state) => state.user.access)
 
@@ -24,10 +24,8 @@ const Historyorders = ({ setswitsh }) => {
             if (response.status === 200) {
                 setorders(data)
             } else {
-                setresponse({ type: "error", message: "faild to load your orders", isExist: true })
-                setTimeout(() => {
-                    setswitsh('your-orders')
-                }, 2000)
+                setresponse({ type: "error", message: "faild to load your orders , plais login", isExist: true , action:'login' })
+                
             }
         }
         handlorders()
