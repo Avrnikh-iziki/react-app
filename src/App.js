@@ -1,3 +1,4 @@
+
 import './App.css';
 import { useState, useEffect, useCallback } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -77,7 +78,7 @@ function App() {
             </ProtectedRoute>}
           />
           <Route path='products' element={
-            <ProtectedRoute user={isSuperUser} >
+            <ProtectedRoute user={isSuperUser}  >
               <Productsmanag />
             </ProtectedRoute>}
           />
